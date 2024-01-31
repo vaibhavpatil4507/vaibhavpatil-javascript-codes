@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            border: 2px solid black;
+            height: 500px;
+            background-color: aliceblue;
+        }
+
+    </style>
+</head>
+<body>
+
+    <script>
+        var colors=["orange","skyblue","green","yellow"];
+        var index=0;
+
+        ref=setInterval(()=>{
+            let divRef=document.getElementById('id1');
+            divRef.style.backgroundColor=colors[index];
+
+            if(index==colors.length-1){
+                index=0;
+            }
+            else{
+                index++;
+            }
+        },2000)();
+    </script>
+    <div id="id1">
+
+    </div>
+</body>
+</html>

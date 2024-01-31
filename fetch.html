@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function loadData(){
+            fetch("https://randomuser.me/api/?results=50").then(function(successResponse){
+                successResponse.json().then(function(data){
+                    for (let i = 0; i < data.results.length; i++) {
+                        let fullname=data.results[i].name.title +' '+ data.results[i].name.last +' '+ data.results[i].name.last;
+                        listRef=document.getElementById("list");
+                        child=document.createElement("li");
+                        child.innerText=fullname;
+                        listRef.appendchild(child)
+                        
+                    }
+                })
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <p>asfdsjfajfastdFileSelect 
+        kjkjdfajsfjdjasdfjdjfdsjfxFlexAlign
+        kkjkjandfkjdfkajstd-data-table-cell <br>
+        jbjbjdbsbshbjbsjbcjhbjsbdbjbsb 
+    </p>
+    <div>
+        <ol id="list">
+
+        </ol>
+    </div>
+    <button onclick="loadData">Load data</button>
+</body>
+</html>
